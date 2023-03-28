@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:9092")
+@CrossOrigin(origins = "*")
 @RequestMapping("/api")
 public class BookController {
 
@@ -65,7 +65,7 @@ public class BookController {
         return ResponseEntity.badRequest().build();
     }
 
-    @GetMapping("/categories")
+    @GetMapping("/books/categories")
     public List<Category> getAllCategories(){
         List<Category> categories = new ArrayList<>();
         for (Category c : Category.values()){
